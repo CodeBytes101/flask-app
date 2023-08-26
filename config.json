@@ -1,0 +1,9 @@
+{
+    "params": {
+        "local_server": "True",
+        "local_uri": "mysql://root:@localhost/flask-project",
+        "prod_uri": "mysql://root:@localhost/flask-project",
+        "email": "roshanleharwani@gmail.com",
+        "password": "kgdfmgyvrebkapyo"
+    }
+}
