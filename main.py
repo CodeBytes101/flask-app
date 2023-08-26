@@ -40,9 +40,9 @@ class codebytes(db.Model):
     title = db.Column(db.String(100), nullable=False)
     slug = db.Column(db.String(50), nullable=False)
     content = db.Column(db.String(), nullable=False)
-    date = db.Column(db.String(), nullable=False)
     by = db.Column(db.String(20), nullable=False)
     fname = db.Column(db.String(50), nullable=False)
+    date = db.Column(db.String(), nullable=False)
 
 
 @app.route("/post/<string:post_slug>", methods=["GET"])
