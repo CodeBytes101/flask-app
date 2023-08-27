@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from flask_mail import Mail, Message
@@ -58,7 +58,7 @@ def home():
 
 @app.route("/about.html")
 def about():
-    return render_template("about.html")
+    return render_template("about.html", params=params)
 
 
 @app.route("/contact.html", methods=["GET", "POST"])

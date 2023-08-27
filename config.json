@@ -4,6 +4,7 @@
         "local_uri": "mysql://root:@localhost/flask-project",
         "prod_uri": "mysql://root:@localhost/flask-project",
         "email": "roshanleharwani@gmail.com",
-        "password": "kgdfmgyvrebkapyo"
+        "password": "kgdfmgyvrebkapyo",
+        "about": "Hi i am a enthusiastic Programmer who loves to Code "
     }
 }
