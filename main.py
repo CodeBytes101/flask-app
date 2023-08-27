@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from flask_mail import Mail, Message
@@ -38,6 +38,7 @@ class Contact(db.Model):
 class codebytes(db.Model):
     Sno = db.Column(db.Integer(), primary_key=True, nullable=False)
     title = db.Column(db.String(100), nullable=False)
+    sub_title = db.Column(db.String(100), nullable=False)
     slug = db.Column(db.String(50), nullable=False)
     content = db.Column(db.String(), nullable=False)
     by = db.Column(db.String(20), nullable=False)
@@ -53,7 +54,8 @@ def post_route(post_slug):
 
 @app.route("/index.html")
 def home():
-    return render_template("index.html")
+    posts = codebytes.query.filter_by().all()[0:params['number of post']]
+    return render_template("index.html",posts = posts)
 
 
 @app.route("/about.html")
@@ -85,6 +87,11 @@ def contact():
         msg.body = f"{message}\n\nMobile Number:{number}\n\nEmail: {email}"
         mail.send(msg)
     return render_template("contact.html")
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
 
 
 if __name__ == "__main__":
